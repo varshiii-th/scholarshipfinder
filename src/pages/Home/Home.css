@@ -1,0 +1,222 @@
+.homepage {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f8fafc;
+}
+
+/* Header Section with Background Image */
+.hero-section {
+  background-size: cover;
+  background-position: right center;
+  background-attachment: fixed;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 80px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+}
+
+.hero-content {
+  max-width: 600px;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-title {
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+}
+
+.hero-tagline {
+  color: #f1f5f9;
+  font-size: 20px;
+  line-height: 1.8;
+  font-weight: 300;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+}
+
+/* Join Button Styling */
+.join-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #1e40af;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.join-button:hover {
+  background-color: #1e3a8a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Intro Section with Boxed Style */
+.intro-section {
+  padding: 40px 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.intro-content {
+  background-color: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 800px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.intro-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.intro-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #475569;
+}
+
+/* Info Section with Image on Left and Text on Right */
+.info-section {
+  display: flex;
+  align-items: center;
+  padding: 80px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 40px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+}
+
+.info-image {
+  flex: 1;
+  margin-right: 40px;
+}
+
+.info-image img {
+  width: 100%;
+  max-width: 450px;
+  border: 3px solid #1e40af;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.info-image img:hover {
+  transform: scale(1.05);
+}
+
+.info-text {
+  flex: 1;
+  color: #1e293b;
+}
+
+.info-text h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #1e40af;
+}
+
+.info-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #475569;
+}
+
+/* Styling for Numbered Points */
+.info-text p strong {
+  color: #1e40af;
+  font-weight: 700;
+  font-size: 18px;
+  display: inline-block;
+  margin-top: 16px;
+  padding-left: 10px;
+  border-left: 4px solid #1e40af;
+}
+
+/* Animation for hero content */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 400px;
+    padding: 0 20px;
+    background-position: center;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-tagline {
+    font-size: 16px;
+  }
+
+  .join-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .intro-section {
+    padding: 20px;
+  }
+
+  .intro-content {
+    padding: 20px;
+  }
+
+  .info-section {
+    flex-direction: column;
+    padding: 40px 20px;
+    margin: 20px;
+  }
+
+  .info-image {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .info-image img {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,251 @@
+:root {
+  --txt-color: #2c3e50;
+  --input-boxColor: #ffffff;
+  --button-color: #3498db;
+  --button-txt: #ffffff;
+  --button-hovr: #2980b9;
+  --card-bg: #f5f7fa;
+  --shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --border-color: #dfe6e9;
+  --error-color: #e74c3c;
+  --success-color: #2ecc71;
+  --loading-color: #7f8c8d;
+}
+
+[data-theme="dark"] {
+  --txt-color: #ecf0f1;
+  --input-boxColor: #34495e;
+  --card-bg: #2c3e50;
+  --border-color: #7f8c8d;
+  --shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  --error-color: #ff6b6b;
+  --success-color: #55efc4;
+  --loading-color: #b0b0b0;
+}
+
+.Appp {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  padding: 20px;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #f9fbfc;
+  box-sizing: border-box;
+}
+
+[data-theme="dark"] .Appp {
+  background-color: #1a202c;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 2px solid var(--txt-color);
+  color: var(--txt-color);
+  margin-bottom: 20px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 900px; /* Increased to prevent squeezing */
+  margin: 0 auto;
+  min-width: 0;
+}
+
+.user-info {
+  background-color: var(--card-bg);
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.user-info:hover {
+  transform: translateY(-2px);
+}
+
+.userInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--txt-color);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border-color);
+  flex-wrap: nowrap;
+  min-width: 0;
+  gap: 8px;
+}
+
+.userInfo p:first-child {
+  font-weight: 600;
+  flex-basis: 100px; /* Fixed basis for labels */
+  flex-shrink: 0;
+  margin-right: 8px;
+}
+
+.userInfo p:last-child {
+  flex: 1;
+  text-align: right;
+  color: var(--txt-color);
+  overflow-wrap: break-word;
+  white-space: normal;
+  min-width: 0;
+}
+
+.techContainer {
+  background-color: var(--card-bg);
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* allow wrapping on small screens */
+  gap: 8px;
+}
+
+.techContainer h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--txt-color);
+  margin: 0;
+  flex: 1;
+  min-width: 180px; /* prevents vertical stacking too early */
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+.techContainer button {
+  padding: 4px 8px;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+
+.techContainer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.techContainer button:hover {
+  background-color: var(--button-hovr);
+  transform: scale(1.02); /* Subtler hover effect */
+}
+
+.techContainer button:active {
+  transform: scale(0.98);
+}
+
+.message {
+  font-size: 0.9rem;
+  color: var(--success-color);
+  text-align: center;
+  margin-top: 8px;
+}
+
+.message.error {
+  color: var(--error-color);
+}
+
+.loading {
+  font-size: 0.9rem;
+  color: var(--loading-color);
+  text-align: center;
+  margin-top: 8px;
+}
+
+.error {
+  font-size: 0.9rem;
+  color: var(--error-color);
+  text-align: center;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .Appp {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .profile {
+    max-width: 100%;
+  }
+
+  .user-info {
+    padding: 12px;
+  }
+
+  .userInfo {
+    font-size: 0.95rem;
+    padding: 5px 0;
+    gap: 6px;
+  }
+
+  .userInfo p:first-child {
+    flex-basis: 80px;
+    margin-right: 6px;
+  }
+
+  .userInfo p:last-child {
+    text-align: right;
+    flex: 1;
+  }
+
+  .techContainer {
+    padding: 10px;
+    gap: 6px;
+  }
+
+  .techContainer h2 {
+    font-size: 0.95rem;
+  }
+
+  button {
+    padding: 3px 6px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .userInfo p:first-child {
+    flex-basis: 70px;
+  }
+
+  .techContainer h2 {
+    font-size: 0.9rem;
+  }
+
+  button {
+    padding: 3px 5px;
+    font-size: 0.75rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile, .user-info, .techContainer {
+  animation: fadeIn 0.4s ease-out;
+}

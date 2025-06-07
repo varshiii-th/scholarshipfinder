@@ -1,0 +1,117 @@
+:root {
+  --navbar-background: #000; /* Black background */
+  --navbar-bottom: #333; /* Dark gray border */
+  --navbar-text: #fff; /* White text */
+  --navbar-span: #ccc; /* Light gray for span */
+  --navbar-active: #999; /* Medium gray for active links */
+  --ul-color: #fff; /* White for ul links */
+}
+
+[data-theme="light"] {
+  --navbar-background: #fff; /* White background */
+  --navbar-bottom: #000; /* Black border */
+  --navbar-text: #000; /* Black text */
+  --navbar-span: #666; /* Gray for span */
+  --ul-color: #000; /* Black for ul links */
+  --navbar-active: #333; /* Dark gray for active links */
+}
+
+span {
+  color: var(--navbar-span);
+}
+
+.nav-bar {
+  background-color: var(--navbar-background);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid var(--navbar-bottom);
+  z-index: 1000;
+}
+
+.hamburger-menu {
+  position: absolute;
+  top: 35px;
+  right: 16px;
+  color: var(--ul-color);
+}
+
+.nav-bar ul {
+  padding-right: 50px;
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.nav-bar h1 {
+  color: var(--navbar-text);
+  margin-left: 50px;
+}
+
+.nav-bar a {
+  color: var(--ul-color);
+  font-size: 20px;
+}
+
+.nav-bar .active {
+  color: var(--navbar-active);
+  padding-bottom: 2px;
+  border-bottom: 2px solid var(--navbar-active);
+}
+
+.nav-bar a:not(.active):hover {
+  color: var(--navbar-active);
+}
+
+@media (max-width: 1050px) {
+  .nav-bar {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 750px) {
+  .hamburger-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .nav-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-bar h1 {
+    margin-left: 0;
+  }
+
+  .nav-bar ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-bar ul.open {
+    padding: 0;
+    display: flex;
+  }
+
+  .nav-bar ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-bar .active {
+    border: none;
+    color: var(--navbar-active);
+  }
+
+  .nav-bar a:not(.active):hover {
+    color: var(--navbar-active);
+  }
+}

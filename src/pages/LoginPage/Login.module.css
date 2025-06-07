@@ -1,0 +1,168 @@
+:root {
+  --wrapper-text: #ffffff; /* Pure white text */
+  --wrapper-background: #1a1a1a; /* Deep charcoal background */
+  --inputBox-border: #4a4a4a; /* Subtle gray border */
+  --inputBox-icon-color: #b0b0b0; /* Light gray icon */
+  --inputBox-focus: #007bff; /* Vibrant blue focus */
+  --login-background: #007bff; /* Primary blue button */
+  --login-text: #ffffff; /* White button text */
+  --login-hover: #0056b3; /* Darker blue hover */
+  --login-hover-text: #ffffff; /* White hover text */
+  --register-pa: #b0b0b0; /* Light gray link text */
+  --shadow-color: rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Modern font stack */
+}
+
+[data-theme="light"] {
+  --wrapper-text: #1a1a1a; /* Deep charcoal text */
+  --wrapper-background: #f8f9fa; /* Light gray background */
+  --inputBox-border: #d1d5db; /* Light gray border */
+  --inputBox-icon-color: #4a4a4a; /* Dark gray icon */
+  --inputBox-focus: #007bff; /* Vibrant blue focus */
+  --login-background: #007bff; /* Primary blue button */
+  --login-text: #ffffff; /* White button text */
+  --login-hover: #0056b3; /* Darker blue hover */
+  --register-pa: #4a4a4a; /* Dark gray link text */
+  --shadow-color: rgba(0, 0, 0, 0.1); /* Lighter shadow */
+}
+
+.sectionForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  background: linear-gradient(135deg, var(--wrapper-background), var(--wrapper-background)); /* Subtle gradient */
+}
+
+.wrapper {
+  padding: 2.5rem; /* Consistent spacing */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem; /* Increased spacing for clarity */
+  background: var(--wrapper-background);
+  border-radius: 12px; /* Slightly larger radius for modern look */
+  box-shadow: 0 10px 30px var(--shadow-color); /* Softer, deeper shadow */
+  width: 100%;
+  max-width: 400px; /* Constrain width for better focus */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.wrapper:hover {
+  transform: translateY(-5px); /* Subtle lift on hover */
+  box-shadow: 0 12px 40px var(--shadow-color); /* Enhanced shadow on hover */
+}
+
+.wrapper h1 {
+  font-size: 1.75rem; /* Slightly larger heading */
+  font-weight: 600; /* Semi-bold for emphasis */
+  text-align: center;
+  color: var(--wrapper-text);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-family);
+}
+
+.wrapper .inputBox {
+  position: relative;
+  width: 100%;
+  margin: 1rem 0; /* Consistent vertical spacing */
+}
+
+.inputBox input {
+  width: 100%;
+  height: 48px; /* Taller input for better touch targets */
+  background: transparent;
+  border: 2px solid var(--inputBox-border); /* Thicker, sharper border */
+  border-radius: 12px; /* Modern rounded corners */
+  color: var(--wrapper-text);
+  padding: 0 1rem 0 1.5rem; /* Adjusted padding for icon */
+  font-size: 1rem;
+  font-family: var(--font-family);
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inputBox input:focus {
+  border-color: var(--inputBox-focus);
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3); /* Subtle glow on focus */
+}
+
+.inputBox input::placeholder {
+  color: var(--inputBox-icon-color);
+  opacity: 0.7; /* Subtle placeholder */
+  font-family: var(--font-family);
+}
+
+.inputBox .icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.25rem; /* Slightly larger icon */
+  color: var(--inputBox-icon-color);
+  transition: color 0.3s ease;
+}
+
+.inputBox input:focus + .icon {
+  color: var(--inputBox-focus); /* Icon matches focus color */
+}
+
+form .loginButton {
+  width: 100%;
+  height: 48px; /* Taller button */
+  background: var(--login-background);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  color: var(--login-text);
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--font-family);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form .loginButton:hover {
+  background: var(--login-hover);
+  color: var(--login-hover-text);
+  transform: scale(1.02); /* Subtle scale effect */
+}
+
+form .registerLink {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.registerLink p,
+.registerLink a {
+  font-size: 0.9rem; /* Slightly smaller for hierarchy */
+  color: var(--register-pa);
+  text-decoration: none;
+  font-family: var(--font-family);
+}
+
+.registerLink a:hover {
+  text-decoration: underline;
+  color: var(--inputBox-focus); /* Match focus color */
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 1.5rem; /* Reduced padding for smaller screens */
+    max-width: 90%; /* Responsive width */
+  }
+
+  .wrapper h1 {
+    font-size: 1.5rem; /* Smaller heading */
+  }
+
+  .inputBox input {
+    height: 44px; /* Slightly smaller input */
+    font-size: 0.9rem;
+  }
+
+  form .loginButton {
+    height: 44px; /* Match input height */
+    font-size: 0.9rem;
+  }
+}

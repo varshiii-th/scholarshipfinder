@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Failed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .container h1 {
+            color: #f44336;
+            margin-bottom: 20px;
+        }
+        .container p {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .container a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #f44336;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .container a:hover {
+            background-color: #e53935;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Verification Failed</h1>
+        <p id="message"></p>
+        <a href="/signup">Go to Signup</a>
+    </div>
+    <script>
+        // Get the message from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const message = urlParams.get('message');
+        document.getElementById('message').textContent = message;
+    </script>
+</body>
+</html>

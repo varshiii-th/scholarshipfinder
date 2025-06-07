@@ -1,0 +1,29 @@
+.footer {
+  padding: 30px 0;
+  text-align: center;
+  border-top: 1px solid #333; /* Dark gray border instead of blue */
+  background-color: #000; /* Black background for dark theme */
+  color: #fff; /* White text for dark theme */
+}
+
+[data-theme="light"] .footer {
+  background-color: #fff; /* White background for light theme */
+  color: #000; /* Black text for light theme */
+  border-top: 1px solid #000; /* Black border for light theme */
+}
+
+.footer p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px 0;
+  }
+
+  .footer p {
+    font-size: 12px;
+  }
+}
