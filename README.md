@@ -22,8 +22,8 @@ Scholarship Finder is a smart web application designed to help students discover
 ### First clone the repo
 
 ```bash
-git clone https://github.com/praneethgarre/ScholarshipFinder.git
-cd ScholarshipFinder
+git clone https://github.com/varshiii-th/scholarshipfinder.git
+cd scholarshipfinder
 ```
 
 ### Run Frontend
@@ -35,6 +35,7 @@ npm run dev
 ### Run Backend
 Then open a new terminal and
 ```bash
+cd scholarshipfinder
 cd backend
 npm i
 npm start
