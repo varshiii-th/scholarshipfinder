@@ -14,8 +14,7 @@ Scholarship Finder is a smart web application designed to help students discover
 
 - **Frontend**: React, Vite, CSS Modules  
 - **Backend**: Node.js, Express  
-- **Database**: MongoDB  
-- **Authentication**: JWT  
+- **Database**: MongoDB
 
 ## Getting Started
 
